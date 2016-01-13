@@ -1,6 +1,6 @@
 {
   "name": "jscli",
-  "version": "1.0.0-alpha",
+  "version": "1.0.1-alpha",
   "description": "The JavaScript CLI",
   "main": "src/cli.js",
   "bin": {
