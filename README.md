@@ -7,8 +7,17 @@ Like PureScript's [`pulp`](https://github.com/bodil/pulp) but for javascript.
 
 ```sh
 npm install --global jscli
+```
 
-js --help
+```
+Usage: js <command>
+
+Commands:
+  init  Initialize a new JavaScript project
+
+Options:
+  --version   Show version number                                      [boolean]
+  -h, --help  Show help                                                [boolean]
 ```
 
 ## Scaffolds
