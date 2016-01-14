@@ -1,3 +1,5 @@
+!scaffolds/**/*
+!scaffolds/**/.*
 .DS_Store
 .babelrc
 .editorconfig
