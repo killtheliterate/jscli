@@ -3,12 +3,16 @@
 import yargs from 'yargs'
 
 import init from './commands/init'
+import Update from 'update-notifier'
 
-import {version} from '../package.json'
+import pkg from '../package.json'
+
+const update = Update({pkg})
+update.notify()
 
 yargs
   .usage('\nUsage: js <command>')
-  .version(version)
+  .version(pkg.version)
   .command('init', 'Initialize a new JavaScript project', init)
   .demand(1)
   .help('h')

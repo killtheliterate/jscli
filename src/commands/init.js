@@ -32,7 +32,7 @@ export default yargs => {
         .demand(2)
         .option('out', {
             alias: 'o',
-            describe: 'The path to which the project will be initialized. ' + 'Defaults to the current directory.'
+            describe: 'The path to which the project will be initialized.'
         })
         .example('javascript init module -o path/to/my-module')
         .help('h')
