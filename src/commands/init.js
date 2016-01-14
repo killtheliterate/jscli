@@ -60,6 +60,7 @@ export default yargs => {
         .then(JSON.parse)
         .then(options => generator([
             scaffold + '/**/*',
+            scaffold + '/**/.*',
             '!**/package.json'
         ], options, argv.out))
 
