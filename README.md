@@ -14,6 +14,7 @@ Usage: js <command>
 
 Commands:
   init  Initialize a new JavaScript project
+  ls    List scaffolds
 
 Options:
   --version   Show version number                                      [boolean]
