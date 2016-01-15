@@ -12,6 +12,9 @@
     "test": "./node_modules/.bin/mocha test",
     "prepublish": "npm run build"
   },
+  "contibutors": [
+     "Garrett Dawson <killtheliterate@gmail.com> (http://thedrearlight.com/)"
+  ],
   "keywords": [
     "module",
     "generator",
