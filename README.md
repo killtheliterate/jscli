@@ -1,7 +1,5 @@
-# `js` (WIP)
+# `jscli`
 > A CLI for javascript
-
-Like PureScript's [`pulp`](https://github.com/bodil/pulp) but for javascript.
 
 # Usage
 

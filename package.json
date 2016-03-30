@@ -4,7 +4,7 @@
   "description": "The JavaScript CLI",
   "main": "src/cli.js",
   "bin": {
-    "js": "dist/cli.js"
+    "jscli": "dist/cli.js"
   },
   "scripts": {
     "build": "rm -rf ./dist && babel src --out-dir dist",
