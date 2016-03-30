@@ -32,7 +32,8 @@ export default yargs => {
         .demand(2)
         .option('out', {
             alias: 'o',
-            describe: 'The path to which the project will be initialized.'
+            describe: 'The path to which the project will be initialized.',
+            default:  process.cwd()
         })
         .example('javascript init module -o path/to/my-module')
         .help('h')
@@ -56,6 +57,14 @@ export default yargs => {
             cwd: resolve(argv.out),
             stdio: [process.stdin, process.stdout]
         }))
+        .then(() => {
+            process.stdout.write('\ninstalling devDependencies...')
+
+            return spawn('npm', ['install'], {
+                cwd: resolve(argv.out),
+                stdio: [process.stdin, process.stdout]
+            })
+        })
         .then(() => read(resolve(argv.out, 'package.json')))
         .then(JSON.parse)
         .then(options => generator([
@@ -63,7 +72,6 @@ export default yargs => {
             scaffold + '/**/.*',
             '!**/package.json'
         ], options, argv.out))
-
         .then(out => {
             process.stdout.write(
 `
