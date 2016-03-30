@@ -12,7 +12,7 @@ const update = Update({pkg})
 update.notify()
 
 yargs
-  .usage('\nUsage: js <command>')
+  .usage('\nUsage: jscli <command>')
   .version(pkg.version)
   .command('init', 'Initialize a new JavaScript project', init)
   .command('ls', 'List scaffolds', ls)

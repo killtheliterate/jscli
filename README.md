@@ -8,7 +8,7 @@ npm install --global jscli
 ```
 
 ```
-Usage: js <command>
+Usage: jscli <command>
 
 Commands:
   init  Initialize a new JavaScript project
@@ -24,8 +24,5 @@ Options:
 To initialize a project run
 
 ```sh
-js init <scaffold> -o path/to/my-project
+js init <scaffold> <dirname>
 ```
-
-`<scaffold>` should be a name of a folder in `scaffolds`.
-the `-o` is optional and will default to the current directory.

@@ -6,7 +6,7 @@ import { stdout } from 'process'
 
 export default function(yargs) {
     yargs
-      .usage('\nUsage: js ls')
+      .usage('\nUsage: jscli ls')
       .demand(0)
       .alias('h', 'help')
       .help('h')

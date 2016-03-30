@@ -28,7 +28,7 @@ export default yargs => {
     // CLI
     // ------------------------------------------------------------------------
     const argv = yargs
-        .usage('\nUsage: js init <scaffold> [OPTIONS]')
+        .usage('\nUsage: jscli init <scaffold> [OPTIONS]')
         .demand(2)
         .option('out', {
             alias: 'o',
