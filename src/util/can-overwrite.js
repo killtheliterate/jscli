@@ -1,10 +1,12 @@
 import {access, F_OK} from 'fs'
+import {resolve} from 'path'
 import inquirer from 'inquirer'
 
 const questionOverwrite = dir => [{
     type: 'confirm',
     name: 'overwrite',
-    message: `${dir} already exists. Overwrite it?`
+    default: false,
+    message: `${resolve(dir)} already exists. Overwrite it?`
 }]
 
 export default (out) => new Promise(resolve => access(out, F_OK, e => {
