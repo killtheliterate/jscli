@@ -1,6 +1,6 @@
 {
   "name": "jscli",
-  "version": "1.0.7-alpha",
+  "version": "2.0.0",
   "description": "The JavaScript CLI",
   "main": "src/cli.js",
   "bin": {
@@ -13,7 +13,7 @@
     "prepublish": "npm run build"
   },
   "contibutors": [
-     "Garrett Dawson <killtheliterate@gmail.com> (http://thedrearlight.com/)"
+    "Garrett Dawson <killtheliterate@gmail.com> (http://thedrearlight.com/)"
   ],
   "keywords": [
     "module",
