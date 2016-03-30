@@ -30,12 +30,16 @@ export default yargs => {
     const argv = yargs
         .usage('\nUsage: jscli init <scaffold> [OPTIONS]')
         .demand(2)
+        .example('javascript init module -o path/to/my-module')
         .option('out', {
             alias: 'o',
-            describe: 'The path to which the project will be initialized.',
-            default:  process.cwd()
+            describe: 'The path to which the project will be initialized.'
         })
-        .example('javascript init module -o path/to/my-module')
+        .option('install', {
+            alias: 'i',
+            describe: '[EXPERIMENTAL] attempt to install dependencies after init',
+            default: false
+        })
         .help('h')
         .alias('h', 'help')
         .argv
@@ -59,8 +63,9 @@ export default yargs => {
             stdio: [process.stdin, process.stdout]
         }))
         .then(() => {
-            process.stdout.write('\ninstalling devDependencies...')
+            if (!argv.install) return
 
+            process.stdout.write('\ninstalling devDependencies...')
             return spawn('npm', ['install'], {
                 cwd: resolve(out),
                 stdio: [process.stdin, process.stdout]
