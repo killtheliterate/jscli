@@ -43,35 +43,36 @@ export default yargs => {
     // The magic
     // ------------------------------------------------------------------------
     const scaffoldName = argv._[1]
+    const out = argv._[2] ? argv._[2] : argv.out
     const scaffold = resolve(SCAFFOLD_DIR, scaffoldName)
     const pack = resolve(scaffold, 'package.json')
 
-    canOverwrite(argv.out)
+    canOverwrite(out)
         .then(can => {
             if (!can) throw new Error('Refusing to overwrite existing directory.')
         })
-        .then(() => spawn('rm', ['-rf', resolve(argv.out)]))
-        .then(() => spawn('mkdir', ['-p', resolve(argv.out)]))
-        .then(() => copy(pack, resolve(argv.out)))
+        .then(() => spawn('rm', ['-rf', resolve(out)]))
+        .then(() => spawn('mkdir', ['-p', resolve(out)]))
+        .then(() => copy(pack, resolve(out)))
         .then(() => spawn('npm', ['init'], {
-            cwd: resolve(argv.out),
+            cwd: resolve(out),
             stdio: [process.stdin, process.stdout]
         }))
         .then(() => {
             process.stdout.write('\ninstalling devDependencies...')
 
             return spawn('npm', ['install'], {
-                cwd: resolve(argv.out),
+                cwd: resolve(out),
                 stdio: [process.stdin, process.stdout]
             })
         })
-        .then(() => read(resolve(argv.out, 'package.json')))
+        .then(() => read(resolve(out, 'package.json')))
         .then(JSON.parse)
         .then(options => generator([
             scaffold + '/**/*',
             scaffold + '/**/.*',
             '!**/package.json'
-        ], options, argv.out))
+        ], options, out))
         .then(out => {
             process.stdout.write(
 `
