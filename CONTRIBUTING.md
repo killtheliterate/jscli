@@ -13,7 +13,9 @@ PR that is not the right fit for the `jscli` project!
 ## Stick to the mission :cool:
 
 `jscli` would like to avoid hundreds of commands/scaffolds that solve 
-specific opinions. Stay lean. Stay simple.
+specific opinions. Stay lean. Stay simple. Try and stick to vanilla JS
+any dependencies should primarily assist in writing the best ES Next code
+that is currently possible. No proprietary syntax. This is a *JavaScript* tool
 
 ## Ask questions :question:
 
